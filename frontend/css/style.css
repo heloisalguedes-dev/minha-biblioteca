@@ -1,0 +1,1086 @@
+/* ========================================
+   CORES E CONFIGURAÇÕES GERAIS
+======================================== */
+
+:root {
+    --roxo: #5b4ab8;
+    --roxo-escuro: #443493;
+    --roxo-claro: #f0edff;
+    --texto: #242333;
+    --texto-suave: #696777;
+    --borda: #dddbe7;
+    --fundo: #f6f6f9;
+    --verde: #27764a;
+    --vermelho: #b53a3a;
+
+    font-size: 16px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+
+body.texto-grande {
+    font-size: 19px;
+}
+
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+.pular-conteudo {
+    position: fixed;
+    top: -60px;
+    left: 10px;
+    z-index: 100;
+
+    padding: 12px;
+
+    background: #ffffff;
+}
+
+
+.pular-conteudo:focus {
+    top: 10px;
+}
+
+
+input:focus,
+select:focus,
+button:focus-visible {
+    outline: 3px solid #c7bdff;
+    outline-offset: 2px;
+    border-color: var(--roxo);
+}
+
+
+/* ========================================
+   ESTRUTURA PRINCIPAL
+======================================== */
+
+.aplicativo {
+    display: grid;
+    grid-template-columns: 245px 1fr;
+
+    min-height: 100vh;
+}
+
+
+main {
+    width: 100%;
+    max-width: 1450px;
+    min-width: 0;
+
+    margin: auto;
+    padding: 34px 4.5%;
+}
+
+
+/* ========================================
+   MENU LATERAL
+======================================== */
+
+.menu {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+    padding: 28px 18px;
+
+    background: #ffffff;
+    border-right: 1px solid var(--borda);
+}
+
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin: 0 12px 38px;
+
+    font-size: 1.25rem;
+    line-height: 1.15;
+}
+
+
+.icone-marca {
+    display: grid;
+    place-items: center;
+
+    width: 48px;
+    height: 48px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #6755c8,
+            #4a399f
+        );
+
+    color: #ffffff;
+
+    border-radius: 14px;
+    box-shadow: 0 5px 12px #4a399f33;
+}
+
+
+.icone-marca svg {
+    width: 34px;
+    height: 34px;
+}
+
+
+.menu nav {
+    display: grid;
+    gap: 8px;
+}
+
+
+.menu-item,
+.controle-fonte {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    min-height: 52px;
+    padding: 14px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: transparent;
+    color: #4e4b5e;
+
+    font-weight: 600;
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+.menu-item:hover,
+.menu-item:focus-visible,
+.menu-item.ativo {
+    background: var(--roxo-claro);
+    color: var(--roxo-escuro);
+}
+
+
+.menu-item span {
+    display: grid;
+    place-items: center;
+    flex: none;
+
+    width: 38px;
+    height: 38px;
+
+    background: #f2efff;
+    border-radius: 11px;
+}
+
+
+.menu-item svg {
+    width: 25px;
+    height: 25px;
+}
+
+
+.menu-item.ativo span {
+    background: #ddd6ff;
+}
+
+
+.menu-item:nth-child(3) span {
+    background: #fff0dc;
+    color: #a45322;
+}
+
+
+.menu-item:nth-child(4) span {
+    background: #e4f2e9;
+    color: #26704a;
+}
+
+
+.menu-item:nth-child(5) span {
+    background: #e4effc;
+    color: #286099;
+}
+
+
+.controle-fonte {
+    justify-content: center;
+
+    margin-top: auto;
+
+    border: 1px solid var(--borda);
+}
+
+
+/* ========================================
+   ÍCONES
+======================================== */
+
+.sprite-icones {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    overflow: hidden;
+}
+
+
+.icone-marca svg,
+.menu-item svg,
+.atalhos svg,
+.ilustracao-livro svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+
+.topo p {
+    margin: 0;
+
+    color: var(--texto-suave);
+}
+
+
+h1 {
+    margin: 2px 0 0;
+
+    font-size: 2rem;
+}
+
+
+h2 {
+    line-height: 1.25;
+}
+
+
+/* ========================================
+   TELAS
+======================================== */
+
+.tela {
+    display: none;
+}
+
+
+.tela.ativa {
+    display: block;
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.botao {
+    min-height: 48px;
+    padding: 13px 20px;
+
+    border: 0;
+    border-radius: 9px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.botao.primario {
+    background: var(--roxo);
+    color: #ffffff;
+}
+
+
+.botao.primario:hover,
+.botao.primario:focus-visible {
+    background: var(--roxo-escuro);
+}
+
+
+.botao.secundario {
+    background: #ffffff;
+    color: var(--texto);
+
+    border: 1px solid var(--borda);
+}
+
+
+.botao.perigo {
+    background: var(--vermelho);
+    color: #ffffff;
+}
+
+
+/* ========================================
+   TELA INICIAL
+======================================== */
+
+.boas-vindas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 30px 36px;
+
+    background:
+        linear-gradient(
+            115deg,
+            #ece8ff,
+            #f8f6ff
+        );
+
+    border: 1px solid #ded8ff;
+    border-radius: 16px;
+}
+
+
+.boas-vindas h2 {
+    margin: 0 0 8px;
+
+    font-size: 1.55rem;
+}
+
+
+.boas-vindas p {
+    margin: 0;
+
+    color: var(--texto-suave);
+}
+
+
+.ilustracao-livro {
+    display: grid !important;
+    place-items: center;
+
+    width: 100px;
+    height: 100px !important;
+
+    background: #ffffff88;
+    color: var(--roxo);
+
+    border-radius: 28px;
+
+    transform: rotate(-3deg);
+}
+
+
+.ilustracao-livro svg {
+    width: 72px;
+    height: 72px;
+}
+
+
+/* ========================================
+   RESUMO DA BIBLIOTECA
+======================================== */
+
+.resumos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+
+    margin: 22px 0 35px;
+}
+
+
+.resumos article {
+    display: flex;
+    align-items: baseline;
+    gap: 11px;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+}
+
+
+.resumos strong {
+    color: var(--roxo);
+
+    font-size: 2rem;
+}
+
+
+.resumos span {
+    color: var(--texto-suave);
+}
+
+
+.subtitulo {
+    font-size: 1.25rem;
+}
+
+
+/* ========================================
+   ATALHOS DA TELA INICIAL
+======================================== */
+
+.atalhos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+
+.atalhos button {
+    min-height: 170px;
+    padding: 24px 18px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+.atalhos button:hover,
+.atalhos button:focus-visible {
+    border-color: var(--roxo);
+    box-shadow: 0 4px 14px #5544aa1a;
+}
+
+
+.atalhos button > span {
+    display: grid;
+    place-items: center;
+
+    width: 55px;
+    height: 55px;
+    margin-bottom: 13px;
+
+    background: #eee9ff;
+    color: var(--roxo);
+
+    border-radius: 15px;
+}
+
+
+.atalhos button:nth-child(2) > span {
+    background: #e4effc;
+    color: #286099;
+}
+
+
+.atalhos button:nth-child(3) > span {
+    background: #e4f2e9;
+    color: #26704a;
+}
+
+
+.atalhos button:nth-child(4) > span {
+    background: #fff0dc;
+    color: #a45322;
+}
+
+
+.atalhos svg {
+    width: 34px;
+    height: 34px;
+}
+
+
+.atalhos strong,
+.atalhos small {
+    display: block;
+}
+
+
+.atalhos strong {
+    font-size: 1.05rem;
+}
+
+
+.atalhos small {
+    margin-top: 5px;
+
+    color: var(--texto-suave);
+
+    font-size: 0.9rem;
+}
+
+
+/* ========================================
+   PESQUISA E FILTROS
+======================================== */
+
+.painel-filtros,
+.cartao-formulario {
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+}
+
+
+.painel-filtros > label,
+.campo label,
+.filtros label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: 700;
+}
+
+
+.painel-filtros > input {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+
+.filtros {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: end;
+    gap: 14px;
+}
+
+
+input,
+select {
+    width: 100%;
+    min-height: 49px;
+    padding: 10px 12px;
+
+    background: #ffffff;
+    color: var(--texto);
+
+    border: 1px solid #bdbac9;
+    border-radius: 8px;
+}
+
+
+.contagem {
+    margin: 22px 0 12px;
+
+    color: var(--texto-suave);
+
+    font-weight: 600;
+}
+
+
+/* ========================================
+   CARDS DOS LIVROS
+======================================== */
+
+.grade-livros {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(250px, 1fr)
+        );
+    gap: 17px;
+}
+
+
+.livro-card {
+    display: grid;
+    gap: 9px;
+
+    padding: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+}
+
+
+.livro-card h3 {
+    margin: 0;
+
+    font-size: 1.1rem;
+}
+
+
+.livro-card p {
+    margin: 0;
+
+    color: var(--texto-suave);
+}
+
+
+.etiqueta {
+    display: inline-block;
+
+    width: max-content;
+    padding: 4px 10px;
+
+    background: #eeeeee;
+
+    border-radius: 20px;
+
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+
+.status-lido {
+    background: #dff3e6;
+    color: #1d693d;
+}
+
+
+.status-lendo {
+    background: #fff0c9;
+    color: #785800;
+}
+
+
+/* ========================================
+   AÇÕES DOS LIVROS
+======================================== */
+
+.livro-acoes {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 8px;
+}
+
+
+.livro-acoes button {
+    flex: 1;
+
+    min-height: 43px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--borda);
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+
+.livro-acoes .excluir {
+    background: var(--vermelho);
+    color: #ffffff;
+
+    border-color: var(--vermelho);
+
+    font-weight: 700;
+}
+
+
+.livro-acoes .excluir:hover,
+.livro-acoes .excluir:focus-visible {
+    background: #922c2c;
+}
+
+
+/* ========================================
+   FORMULÁRIOS
+======================================== */
+
+.cartao-formulario {
+    max-width: 850px;
+}
+
+
+.cartao-formulario h2 {
+    margin: 0 0 6px;
+}
+
+
+.cartao-formulario > p {
+    margin: 0 0 25px;
+
+    color: var(--texto-suave);
+}
+
+
+.cartao-formulario form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+
+.largura-total {
+    grid-column: 1 / -1;
+}
+
+
+.acoes-form {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+
+    margin-top: 8px;
+}
+
+
+/* ========================================
+   CONFIGURAÇÃO DAS ESTANTES
+======================================== */
+
+.campos-estantes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--borda);
+}
+
+
+.config-estante {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 14px;
+
+    padding: 16px;
+
+    background: #f8f7fc;
+
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+}
+
+
+.config-estante h3 {
+    grid-column: 1 / -1;
+
+    margin: 0;
+
+    color: var(--roxo-escuro);
+}
+
+
+/* ========================================
+   VISUALIZAÇÃO DAS ESTANTES
+======================================== */
+
+.introducao {
+    color: var(--texto-suave);
+}
+
+
+.botoes-estantes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin: 20px 0;
+}
+
+
+.botao-estante {
+    padding: 12px 18px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+
+    cursor: pointer;
+}
+
+
+.botao-estante.ativo {
+    background: var(--roxo);
+    color: #ffffff;
+}
+
+
+.prateleira {
+    margin: 15px 0;
+    padding: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--borda);
+    border-bottom: 7px solid #946331;
+    border-radius: 10px;
+}
+
+
+.prateleira h3 {
+    margin: 0 0 13px;
+}
+
+
+.livros-prateleira {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.livro-mini {
+    padding: 10px 13px;
+
+    background: var(--roxo-claro);
+
+    border-radius: 7px;
+
+    font-weight: 600;
+}
+
+
+.vazio {
+    color: var(--texto-suave);
+
+    font-style: italic;
+}
+
+
+/* ========================================
+   MENSAGENS
+======================================== */
+
+.mensagem {
+    display: none;
+
+    margin: -12px 0 22px;
+    padding: 13px 16px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+}
+
+
+.mensagem.visivel {
+    display: block;
+}
+
+
+.mensagem.sucesso {
+    background: #dff3e6;
+    color: #1d693d;
+}
+
+
+.mensagem.erro {
+    background: #fde4e4;
+    color: #8b2626;
+}
+
+
+/* ========================================
+   MODAL DE EXCLUSÃO
+======================================== */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: #00000088;
+}
+
+
+.modal.aberto {
+    display: flex;
+}
+
+
+.modal-conteudo {
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    text-align: center;
+}
+
+
+.icone-alerta {
+    display: grid;
+    place-items: center;
+
+    width: 48px;
+    height: 48px;
+    margin: auto;
+
+    background: #fde4e4;
+    color: var(--vermelho);
+
+    border-radius: 50%;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+.acoes-modal {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    margin-top: 24px;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 1050px) {
+    .atalhos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .resumos {
+        grid-template-columns: 1fr;
+    }
+
+
+    .resumos article {
+        padding: 14px;
+    }
+
+
+    .resumos strong {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (max-width: 760px) {
+    .aplicativo {
+        grid-template-columns: 1fr;
+    }
+
+
+    .menu {
+        position: static;
+
+        height: auto;
+        padding: 14px;
+    }
+
+
+    .marca {
+        margin: 0 0 14px;
+    }
+
+
+    .menu nav {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .controle-fonte {
+        margin-top: 12px;
+    }
+
+
+    .topo {
+        align-items: flex-start;
+    }
+
+
+    main {
+        padding: 22px 18px;
+    }
+
+
+    .filtros,
+    .cartao-formulario form,
+    .campos-estantes,
+    .config-estante {
+        grid-template-columns: 1fr;
+    }
+
+
+    .config-estante h3 {
+        grid-column: auto;
+    }
+
+
+    .largura-total {
+        grid-column: auto;
+    }
+
+
+    .atalhos {
+        grid-template-columns: 1fr;
+    }
+
+
+    .atalhos button {
+        min-height: 120px;
+    }
+
+
+    .ilustracao-livro {
+        display: none !important;
+    }
+}

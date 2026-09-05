@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Minha Biblioteca</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+    <!-- Ícones utilizados na interface -->
+    <svg
+        class="sprite-icones"
+        aria-hidden="true"
+    >
+        <symbol
+            id="icone-livro-aberto"
+            viewBox="0 0 48 48"
+        >
+            <path d="M6 9c7-1 13 1 18 5v27c-5-4-11-6-18-5V9Z"></path>
+            <path d="M42 9c-7-1-13 1-18 5v27c5-4 11-6 18-5V9Z"></path>
+            <path d="M11 16c3 0 6 1 8 2M11 23c3 0 6 1 8 2"></path>
+        </symbol>
+
+        <symbol
+            id="icone-casa"
+            viewBox="0 0 48 48"
+        >
+            <path d="m7 23 17-14 17 14"></path>
+            <path d="M11 21v19h26V21M19 40V28h10v12"></path>
+        </symbol>
+
+        <symbol
+            id="icone-livros"
+            viewBox="0 0 48 48"
+        >
+            <rect
+                x="7"
+                y="9"
+                width="9"
+                height="31"
+                rx="2"
+            ></rect>
+
+            <rect
+                x="18"
+                y="6"
+                width="10"
+                height="34"
+                rx="2"
+            ></rect>
+
+            <path
+                d="m31 10 8-2 6 30-9 2-5-30ZM10 16h4M21 14h4M35 17l7-2"
+            ></path>
+        </symbol>
+
+        <symbol
+            id="icone-adicionar"
+            viewBox="0 0 48 48"
+        >
+            <path
+                d="M7 10c7-1 12 1 16 4v27c-4-3-9-5-16-4V10ZM23 14c4-3 9-5 16-4v13"
+            ></path>
+
+            <circle
+                cx="36"
+                cy="35"
+                r="9"
+            ></circle>
+
+            <path d="M36 31v8M32 35h8"></path>
+        </symbol>
+
+        <symbol
+            id="icone-estante"
+            viewBox="0 0 48 48"
+        >
+            <rect
+                x="6"
+                y="7"
+                width="36"
+                height="34"
+                rx="3"
+            ></rect>
+
+            <path
+                d="M6 24h36M12 12v9M18 12v9M27 12v9M33 12v9M13 29v8M20 29v8M30 29v8M37 29v8"
+            ></path>
+        </symbol>
+
+        <symbol
+            id="icone-ajustes"
+            viewBox="0 0 48 48"
+        >
+            <path d="M9 13h30M9 24h30M9 35h30"></path>
+
+            <circle
+                cx="18"
+                cy="13"
+                r="4"
+            ></circle>
+
+            <circle
+                cx="31"
+                cy="24"
+                r="4"
+            ></circle>
+
+            <circle
+                cx="21"
+                cy="35"
+                r="4"
+            ></circle>
+        </symbol>
+
+        <symbol
+            id="icone-busca"
+            viewBox="0 0 48 48"
+        >
+            <circle
+                cx="21"
+                cy="21"
+                r="12"
+            ></circle>
+
+            <path d="m30 30 11 11M17 17h8M21 13v8"></path>
+        </symbol>
+    </svg>
+
+
+    <!-- Atalho de acessibilidade -->
+    <a
+        class="pular-conteudo"
+        href="#conteudo"
+    >
+        Pular para o conteúdo
+    </a>
+
+
+    <div class="aplicativo">
+
+        <!-- Menu lateral -->
+        <aside
+            class="menu"
+            aria-label="Menu principal"
+        >
+            <div class="marca">
+                <span class="icone-marca">
+                    <svg aria-hidden="true">
+                        <use href="#icone-livro-aberto"></use>
+                    </svg>
+                </span>
+
+                <strong>
+                    Minha<br>
+                    Biblioteca
+                </strong>
+            </div>
+
+
+            <nav>
+                <button
+                    class="menu-item ativo"
+                    data-tela="inicio"
+                    type="button"
+                >
+                    <span>
+                        <svg aria-hidden="true">
+                            <use href="#icone-casa"></use>
+                        </svg>
+                    </span>
+
+                    Início
+                </button>
+
+
+                <button
+                    class="menu-item"
+                    data-tela="livros"
+                    type="button"
+                >
+                    <span>
+                        <svg aria-hidden="true">
+                            <use href="#icone-livros"></use>
+                        </svg>
+                    </span>
+
+                    Meus livros
+                </button>
+
+
+                <button
+                    class="menu-item"
+                    data-tela="adicionar"
+                    type="button"
+                >
+                    <span>
+                        <svg aria-hidden="true">
+                            <use href="#icone-adicionar"></use>
+                        </svg>
+                    </span>
+
+                    Adicionar livro
+                </button>
+
+
+                <button
+                    class="menu-item"
+                    data-tela="estantes"
+                    type="button"
+                >
+                    <span>
+                        <svg aria-hidden="true">
+                            <use href="#icone-estante"></use>
+                        </svg>
+                    </span>
+
+                    Estantes
+                </button>
+
+
+                <button
+                    class="menu-item"
+                    data-tela="configuracoes"
+                    type="button"
+                >
+                    <span>
+                        <svg aria-hidden="true">
+                            <use href="#icone-ajustes"></use>
+                        </svg>
+                    </span>
+
+                    Configurações
+                </button>
+            </nav>
+
+
+            <button
+                id="alternar-fonte"
+                class="controle-fonte"
+                type="button"
+            >
+                A⁺ Aumentar texto
+            </button>
+        </aside>
+
+
+        <!-- Conteúdo principal -->
+        <main
+            id="conteudo"
+            tabindex="-1"
+        >
+            <header class="topo">
+                <div>
+                    <p>Bem-vindo(a)</p>
+                    <h1 id="titulo-tela">Início</h1>
+                </div>
+            </header>
+
+
+            <div
+                id="mensagem"
+                class="mensagem"
+                role="status"
+                aria-live="polite"
+            ></div>
+
+
+            <!-- Tela inicial -->
+            <section
+                id="tela-inicio"
+                class="tela ativa"
+            >
+                <div class="boas-vindas">
+                    <div>
+                        <h2>
+                            Organize seus livros com facilidade
+                        </h2>
+
+                        <p>
+                            Escolha uma opção para começar.
+                        </p>
+                    </div>
+
+                    <span class="ilustracao-livro">
+                        <svg aria-hidden="true">
+                            <use href="#icone-livro-aberto"></use>
+                        </svg>
+                    </span>
+                </div>
+
+
+                <div class="resumos">
+                    <article>
+                        <strong id="total-livros">
+                            0
+                        </strong>
+
+                        <span>
+                            livros cadastrados
+                        </span>
+                    </article>
+
+
+                    <article>
+                        <strong id="total-lendo">
+                            0
+                        </strong>
+
+                        <span>
+                            livros em leitura
+                        </span>
+                    </article>
+
+
+                    <article>
+                        <strong id="total-lidos">
+                            0
+                        </strong>
+
+                        <span>
+                            livros concluídos
+                        </span>
+                    </article>
+                </div>
+
+
+                <h2 class="subtitulo">
+                    O que você deseja fazer?
+                </h2>
+
+
+                <div class="atalhos">
+                    <button
+                        data-tela="adicionar"
+                        type="button"
+                    >
+                        <span>
+                            <svg aria-hidden="true">
+                                <use href="#icone-adicionar"></use>
+                            </svg>
+                        </span>
+
+                        <strong>
+                            Adicionar livro
+                        </strong>
+
+                        <small>
+                            Cadastre um novo livro
+                        </small>
+                    </button>
+
+
+                    <button
+                        data-tela="livros"
+                        type="button"
+                    >
+                        <span>
+                            <svg aria-hidden="true">
+                                <use href="#icone-busca"></use>
+                            </svg>
+                        </span>
+
+                        <strong>
+                            Procurar livro
+                        </strong>
+
+                        <small>
+                            Veja e pesquise seus livros
+                        </small>
+                    </button>
+
+
+                    <button
+                        data-tela="estantes"
+                        type="button"
+                    >
+                        <span>
+                            <svg aria-hidden="true">
+                                <use href="#icone-estante"></use>
+                            </svg>
+                        </span>
+
+                        <strong>
+                            Ver estantes
+                        </strong>
+
+                        <small>
+                            Encontre cada livro
+                        </small>
+                    </button>
+
+
+                    <button
+                        data-tela="configuracoes"
+                        type="button"
+                    >
+                        <span>
+                            <svg aria-hidden="true">
+                                <use href="#icone-ajustes"></use>
+                            </svg>
+                        </span>
+
+                        <strong>
+                            Configurar
+                        </strong>
+
+                        <small>
+                            Organize as estantes
+                        </small>
+                    </button>
+                </div>
+            </section>
+
+
+            <!-- Tela de livros -->
+            <section
+                id="tela-livros"
+                class="tela"
+            >
+                <div class="painel-filtros">
+                    <label for="pesquisa">
+                        Pesquisar livro
+                    </label>
+
+                    <input
+                        id="pesquisa"
+                        type="search"
+                        placeholder="Digite o título, autor ou gênero"
+                    >
+
+
+                    <div class="filtros">
+                        <div>
+                            <label for="filtro-status">
+                                Status
+                            </label>
+
+                            <select id="filtro-status">
+                                <option value="Todos">
+                                    Todos
+                                </option>
+
+                                <option value="Não lido">
+                                    Não lido
+                                </option>
+
+                                <option value="Lendo">
+                                    Lendo
+                                </option>
+
+                                <option value="Lido">
+                                    Lido
+                                </option>
+                            </select>
+                        </div>
+
+
+                        <div>
+                            <label for="filtro-estante">
+                                Estante
+                            </label>
+
+                            <select id="filtro-estante">
+                                <option value="Todos">
+                                    Todas
+                                </option>
+                            </select>
+                        </div>
+
+
+                        <button
+                            id="limpar-filtros"
+                            class="botao secundario"
+                            type="button"
+                        >
+                            Limpar filtros
+                        </button>
+                    </div>
+                </div>
+
+
+                <p
+                    id="contagem-resultados"
+                    class="contagem"
+                ></p>
+
+
+                <div
+                    id="lista-livros"
+                    class="grade-livros"
+                ></div>
+            </section>
+
+
+            <!-- Tela de cadastro e edição -->
+            <section
+                id="tela-adicionar"
+                class="tela"
+            >
+                <div class="cartao-formulario">
+                    <h2 id="titulo-formulario">
+                        Cadastrar novo livro
+                    </h2>
+
+                    <p>
+                        Preencha as informações abaixo.
+                        Todos os campos são obrigatórios.
+                    </p>
+
+
+                    <form id="form-livro">
+                        <input
+                            type="hidden"
+                            id="livro-id"
+                        >
+
+
+                        <div class="campo largura-total">
+                            <label for="titulo">
+                                Título do livro
+                            </label>
+
+                            <input
+                                id="titulo"
+                                type="text"
+                                maxlength="150"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="campo">
+                            <label for="autor">
+                                Autor
+                            </label>
+
+                            <input
+                                id="autor"
+                                type="text"
+                                maxlength="120"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="campo">
+                            <label for="ano">
+                                Ano de publicação
+                            </label>
+
+                            <input
+                                id="ano"
+                                type="number"
+                                min="0"
+                                max="2200"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="campo">
+                            <label for="genero">
+                                Gênero
+                            </label>
+
+                            <input
+                                id="genero"
+                                type="text"
+                                maxlength="80"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="campo">
+                            <label for="status">
+                                Status de leitura
+                            </label>
+
+                            <select id="status">
+                                <option value="Não lido">
+                                    Não lido
+                                </option>
+
+                                <option value="Lendo">
+                                    Lendo
+                                </option>
+
+                                <option value="Lido">
+                                    Lido
+                                </option>
+                            </select>
+                        </div>
+
+
+                        <div class="campo">
+                            <label for="estante">
+                                Estante
+                            </label>
+
+                            <select
+                                id="estante"
+                                required
+                            ></select>
+                        </div>
+
+
+                        <div class="campo">
+                            <label for="prateleira">
+                                Prateleira
+                            </label>
+
+                            <select
+                                id="prateleira"
+                                required
+                            ></select>
+                        </div>
+
+
+                        <div class="acoes-form largura-total">
+                            <button
+                                type="button"
+                                id="cancelar-formulario"
+                                class="botao secundario"
+                            >
+                                Cancelar
+                            </button>
+
+                            <button
+                                class="botao primario"
+                                type="submit"
+                            >
+                                Salvar livro
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+
+            <!-- Tela de estantes -->
+            <section
+                id="tela-estantes"
+                class="tela"
+            >
+                <p class="introducao">
+                    Selecione uma estante para visualizar
+                    suas prateleiras e livros.
+                </p>
+
+                <div
+                    id="botoes-estantes"
+                    class="botoes-estantes"
+                ></div>
+
+                <div id="visualizacao-estante"></div>
+            </section>
+
+
+            <!-- Tela de configurações -->
+            <section
+                id="tela-configuracoes"
+                class="tela"
+            >
+                <div class="cartao-formulario">
+                    <h2>
+                        Organização da biblioteca
+                    </h2>
+
+                    <p>
+                        Escolha a quantidade de estantes.
+                        Depois, defina o nome e o número de
+                        prateleiras de cada uma.
+                    </p>
+
+
+                    <form id="form-configuracao">
+                        <div class="campo largura-total">
+                            <label for="quantidade-estantes">
+                                Quantidade de estantes
+                            </label>
+
+                            <input
+                                id="quantidade-estantes"
+                                type="number"
+                                min="1"
+                                max="20"
+                                required
+                            >
+                        </div>
+
+
+                        <div
+                            id="nomes-estantes"
+                            class="largura-total campos-estantes"
+                        ></div>
+
+
+                        <div class="acoes-form largura-total">
+                            <button
+                                class="botao primario"
+                                type="submit"
+                            >
+                                Salvar configurações
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    <!-- Modal de confirmação de exclusão -->
+    <div
+        id="modal-exclusao"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="titulo-exclusao"
+    >
+        <div class="modal-conteudo">
+            <span class="icone-alerta">
+                !
+            </span>
+
+            <h2 id="titulo-exclusao">
+                Excluir este livro?
+            </h2>
+
+            <p>
+                Essa ação não poderá ser desfeita.
+            </p>
+
+            <div class="acoes-modal">
+                <button
+                    id="cancelar-exclusao"
+                    class="botao secundario"
+                    type="button"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    id="confirmar-exclusao"
+                    class="botao perigo"
+                    type="button"
+                >
+                    Sim, excluir
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
