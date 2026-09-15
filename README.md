@@ -174,3 +174,5 @@ O sistema impede a remoção de estantes ou prateleiras que ainda contenham livr
 ## Objetivo do projeto
 
 O projeto foi desenvolvido para facilitar a organização de uma biblioteca pessoal, oferecendo uma interface simples e acessível para cadastrar, localizar e acompanhar livros.
+
+**Aviso:** Este é um projeto pessoal desenvolvido para uso próprio e como parte dos meus estudos em programação. O código é disponibilizado para fins educacionais e o software é fornecido “como está”, sem garantias. Cada usuário é responsável pela instalação, utilização e proteção dos próprios dados.
